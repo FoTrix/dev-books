@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="es" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.5.3"><title>Refactoring - Dev Books</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><link rel="stylesheet" href="/_astro/_id_.DvQB2ShA.css">
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-rzeezgyp-1"] { view-transition-name: img-refactoring; }@layer astro { ::view-transition-old(img-refactoring) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(img-refactoring) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(img-refactoring) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(img-refactoring) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-rzeezgyp-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-rzeezgyp-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-rzeezgyp-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-rzeezgyp-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-rzeezgyp-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-rzeezgyp-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-rzeezgyp-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-rzeezgyp-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body data-astro-cid-sckkx6r4>  <div class="container grid place-content-center px-4 sm:px-6 py-8 lg:py-12"> <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-center max-w-7xl mx-auto"> <aside class="w-full lg:w-1/3 xl:w-1/4 lg:sticky lg:top-6 grid place-content-center gap-4 mb-6 lg:mb-0"> <div class="w-full sm:max-w-[20rem] lg:max-w-[24rem] mx-auto lg:mx-0 text-center space-y-4"> <img src="/refactoring.jpg" alt="Refactoring" class="rounded-xl w-full h-auto hover:opacity-90 transition-opacity shadow-lg" data-astro-transition-scope="astro-rzeezgyp-1"> <!--[if astro]>server-island-start<![endif]--><span class="text-xs opacity-70">⏳ Cargando puntuación...</span><link rel="preload" as="fetch" href="/_server-islands/BookScore?e=default&p=BC37EC6CBA72BEEE5169AEE1PU8IlHmnXtHpE5fJYbo36uDXPtIpnng0Ke2tFn75xHcrcryL&s=%7B%7D" crossorigin="anonymous"><script async type="module" data-island-id="7e15b7a4-1516-49d5-a9f6-f96f37aea05c">
+let script = document.querySelector('script[data-island-id="7e15b7a4-1516-49d5-a9f6-f96f37aea05c"]');
+
+let response = await fetch('/_server-islands/BookScore?e=default&p=BC37EC6CBA72BEEE5169AEE1PU8IlHmnXtHpE5fJYbo36uDXPtIpnng0Ke2tFn75xHcrcryL&s=%7B%7D');
+
+if (script) {
+	if(
+		response.status === 200 
+		&& response.headers.has('content-type') 
+		&& response.headers.get('content-type').split(";")[0].trim() === 'text/html') {
+		let html = await response.text();
+	
+		// Swap!
+		while(script.previousSibling &&
+			script.previousSibling.nodeType !== 8 &&
+			script.previousSibling.data !== '[if astro]>server-island-start<![endif]') {
+			script.previousSibling.remove();
+		}
+		script.previousSibling?.remove();
+	
+		let frag = document.createRange().createContextualFragment(html);
+		script.before(frag);
+	}
+	script.remove();
+}
+</script> </div> <!--[if astro]>server-island-start<![endif]--><link rel="preload" as="fetch" href="/_server-islands/BuyButton?e=default&p=F40AAC76BD2C028F83C22E856P55MBPaDTbj32YYH0z84612ZeXI3YLs7kLllIC7xWzF3k4NfpJNJluiohtWMbV66WVSq3tBaFmmsptpnjLfvFyDx0OG6B1Ve28CTwt3AxbG2RzoNquG%2BX9Zi18%2BXmHXoDHncKTNdehzctf7dKTNQk1zr1G8tA8qh5rH&s=%7B%7D" crossorigin="anonymous"><script async type="module" data-island-id="bfb983fa-9ee3-4ea8-8871-7211730951fe">
+let script = document.querySelector('script[data-island-id="bfb983fa-9ee3-4ea8-8871-7211730951fe"]');
+
+let response = await fetch('/_server-islands/BuyButton?e=default&p=F40AAC76BD2C028F83C22E856P55MBPaDTbj32YYH0z84612ZeXI3YLs7kLllIC7xWzF3k4NfpJNJluiohtWMbV66WVSq3tBaFmmsptpnjLfvFyDx0OG6B1Ve28CTwt3AxbG2RzoNquG%2BX9Zi18%2BXmHXoDHncKTNdehzctf7dKTNQk1zr1G8tA8qh5rH&s=%7B%7D');
+
+if (script) {
+	if(
+		response.status === 200 
+		&& response.headers.has('content-type') 
+		&& response.headers.get('content-type').split(";")[0].trim() === 'text/html') {
+		let html = await response.text();
+	
+		// Swap!
+		while(script.previousSibling &&
+			script.previousSibling.nodeType !== 8 &&
+			script.previousSibling.data !== '[if astro]>server-island-start<![endif]') {
+			script.previousSibling.remove();
+		}
+		script.previousSibling?.remove();
+	
+		let frag = document.createRange().createContextualFragment(html);
+		script.before(frag);
+	}
+	script.remove();
+}
+</script> </aside> <main class="w-full lg:w-2/3 xl:w-3/4"> <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-200 tracking-tight"> Refactoring </h2> <div class="prose prose-invert prose-sm lg:prose-lg max-w-none pb-8 border-l-4 rounded-l-md border-gray-300 pl-2"> <p>Martin Fowler’s guide to reworking bad code into well-structured code</p>
+<p>Refactoring improves the design of existing code and enhances software maintainability, as well as making existing code easier to understand. Original Agile Manifesto signer and software development thought leader, Martin Fowler, provides a catalog of refactorings that explains why you should refactor; how to recognize code that needs refactoring; and how to actually do it successfully, no matter what language you use.</p> </div> <div class="absolute z-48 top-[10px] right-[15px]"> <a href="/" class="text-2xl font-bold text-gray-300 hover:text-white hover:underline opacity-70 transition-colors">X</a> </div> </main> </div> </div>  </body></html>
