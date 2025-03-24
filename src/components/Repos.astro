@@ -1,0 +1,19 @@
+---
+import { REPO_API_URL } from "astro:env/server";
+import axios from "axios";
+
+
+
+
+    const response = await axios.get(REPO_API_URL);
+    const repos =  await response.data;
+
+---
+
+
+{
+    repos.map((repo) => (
+        <h1> name: {repo.name} </h1>
+        <p> url: { repo.url }</p>
+    ))
+}

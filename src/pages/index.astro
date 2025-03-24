@@ -1,10 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const books = await getCollection("books");
+export const prerender = true;
 ---
 
-
-<Layout title='index'>
-<main>
-	<h1 class="text-center text-7xl font-extrabold">Dev 👨🏼‍💻 <span class="block">Books</span></h1>
-</main>
+<Layout title="index">
+  <main class="space-y-15 pt-10">
+    <header>
+      <h1 class="text-center text-7xl font-extrabold">
+        Dev 👨🏼‍💻 <span class="block text-amber-300">Books</span>
+      </h1>
+    </header>
+    <section aria-label="Libros recomendados para programadores">
+      <div class="px-4 mx-auto max-w-screen-xl">
+        <div class="grid gap-6 md:grid-cols-2">
+          {
+            books.map((book) => {
+              const { slug, data } = book;
+              const { title, author, img, readtime, description, buy } = data;
+              return (
+                <article class="flex gap-2 overflow-hidden space-x-5 bg-gray-900 rounded-lg"
+				>
+                  <a
+                    href={`/book/${slug}`}
+                    class="mb-2 xl:mb-0 transition hover:scale-110"
+                  >
+                    <div class="max-w-48 border-b-blue-600 overflow-hidden"
+					
+					>
+                      <img
+                        src={`/${img}`}
+                        alt={title}
+						transition:name={`img-${slug}`}
+                        class="mr-5 object-cover rounded"
+                      />
+                    </div>
+                  </a>
+                  <div class="flex flex-col justify-center">
+                    <h2 class="mb-2 text-2xl font-bold text-white"
+					>{title}</h2>
+                    <p class="mb-4 text-gray-300 max-w-sm">
+                      <span class="font-bold block pb-3">{author}</span>
+                      {description}
+                    </p>
+                    <span class="text-xs">
+                      ⌛️ Lectura en {readtime} minutos
+                    </span>
+                    <a
+                      href={buy.spain}
+                      class="transition-all duration-300 hover:text-gray-200 hover:font-bold"
+                    >
+                      ¡click aca!
+                    </a>
+                    <a
+                      href={buy.usa}
+                      class="transition-all duration-300 hover:text-gray-200 hover:font-bold"
+                    >
+                      click here!
+                    </a>
+                  </div>
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

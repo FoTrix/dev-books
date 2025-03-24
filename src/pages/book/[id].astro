@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from "astro:content";
+import { SHOW_BUY_BUTTON } from "astro:env/server";
+import Layout from "../../layouts/Layout.astro";
+import AmazonLogo from "../../components/AmazonLogo.astro";
+import BookScore from "../../components/BookScore.astro";
+import BuyButton from "../../BuyButton.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+  return books.map((book) => ({
+    params: { id: book.slug },
+    props: { book },
+  }));
+}
+
+ 
+const { book } = Astro.props;
+const { data, slug } = book;
+const { title, author, img, readtime, description, buy } = data;
+
+const { Content } = await render(book);
+---
+
+<Layout title={`${title} - Dev Books`}>
+  <div class="container grid place-content-center px-4 sm:px-6 py-8 lg:py-12">
+    <div
+      class="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-center max-w-7xl mx-auto"
+    >
+      <aside class="w-full lg:w-1/3 xl:w-1/4 lg:sticky lg:top-6 grid place-content-center gap-4 mb-6 lg:mb-0">
+        <div class="w-full sm:max-w-[20rem] lg:max-w-[24rem] mx-auto lg:mx-0 text-center space-y-4">
+          <img
+            transition:name={`img-${slug}`}
+            src={`/${img}`}
+            alt={title}
+            class="rounded-xl w-full h-auto hover:opacity-90 transition-opacity shadow-lg"
+          />
+          <BookScore server:defer id={slug}>
+            <span slot="fallback" class="text-xs opacity-70">⏳ Cargando puntuación...</span>
+          </BookScore>
+        </div>
+        {
+          SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy}/>
+        }
+      </aside>
+      <main class="w-full lg:w-2/3 xl:w-3/4">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-200 tracking-tight"
+        >
+          {title}
+        </h2>
+        <div class="prose prose-invert prose-sm lg:prose-lg max-w-none pb-8 border-l-4 rounded-l-md border-gray-300 pl-2">
+          <Content />
+        </div>
+        <div class="absolute z-48 top-[10px] right-[15px]">
+          <a
+            href="/"
+            class="text-2xl font-bold text-gray-300 hover:text-white hover:underline opacity-70 transition-colors"
+            >X</a
+          >
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>
+
