@@ -6,13 +6,10 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-
   vite: {
     plugins: [tailwindcss()],
-    
   },
-
+  output: "server",
   env:{
     schema:{
       PUBLIC_SHOW_BUTTON: envField.boolean({context:"server", access:"public", default: true}),
