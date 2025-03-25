@@ -7,8 +7,8 @@ export const prerender = true;
 
 import { SCORE_API_URL, SHOW_BUY_BUTTON } from "astro:env/client";
 
-console.log("Vercel deployment check: ", SHOW_BUY_BUTTON);
-console.log("Vercel deployment check: ", SCORE_API_URL);
+console.log("Vercel deployment check: ", process.env.SCORE_API_URL);
+console.log("Vercel deployment check: ", process.env.SHOW_BUY_BUTTON);
 ---
 
 <Layout title="index">
