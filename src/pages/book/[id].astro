@@ -1,9 +1,9 @@
 ---
 import { getCollection, render } from "astro:content";
-import { SHOW_BUY_BUTTON } from "astro:env/server";
+import { PUBLIC_SHOW_BUTTON } from "astro:env/server";
 import Layout from "../../layouts/Layout.astro";
 import BookScore from "../../components/BookScore.astro";
-import BuyButton from "../../BuyButton.astro";
+import BuyButton from "../../components/BuyButton.astro";
 
 export const prerender = true;
 
@@ -41,7 +41,7 @@ const { Content } = await render(book);
           </BookScore>
         </div>
         {
-          SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy}/>
+          PUBLIC_SHOW_BUTTON && <BuyButton server:defer buy={buy}/>
         }
       </aside>
       <main class="w-full lg:w-2/3 xl:w-3/4">

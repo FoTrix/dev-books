@@ -15,9 +15,9 @@ export default defineConfig({
 
   env:{
     schema:{
-      SHOW_BUY_BUTTON: envField.boolean({context:"server", access:"public", default: true}),
-      SCORE_API_URL: envField.string({ context:"server", access:"public"}),
-      REPO_API_URL: envField.string({ context:"server", access:"public"}),
+      PUBLIC_SHOW_BUTTON: envField.boolean({context:"server", access:"public", default: true}),
+      PUBLIC_SCORE_API: envField.string({ context:"server", access:"public"}),
+      PUBLIC_REPO_API: envField.string({ context:"server", access:"public"}),
     },
   },
 

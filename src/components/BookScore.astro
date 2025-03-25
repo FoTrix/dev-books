@@ -1,9 +1,9 @@
 ---
-import { SCORE_API_URL } from "astro:env/server";
+import { PUBLIC_SCORE_API } from "astro:env/server";
 
 
 
-const score = await fetch(SCORE_API_URL)
+const score = await fetch(PUBLIC_SCORE_API)
 const scoreValue = await score.text()
 
 ---
