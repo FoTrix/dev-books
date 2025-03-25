@@ -1,11 +1,10 @@
 ---
-import { env } from "astro:env/client";
+import { env } from "astro:env/server";
 
 const PUBLIC_SCORE_API = env.PUBLIC_SCORE_API
 
 const score = await fetch(PUBLIC_SCORE_API)
 const scoreValue = await score.text()
-
 ---
 
 <span class="text-xs" id="score">⭐️ Puntuación: {scoreValue.trim()} / 5</span>

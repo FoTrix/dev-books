@@ -1,7 +1,6 @@
-declare module 'astro:env/client' {
+declare module 'astro:env/server' {
     export const env: {
         readonly PUBLIC_SCORE_API: string;
-        readonly PUBLIC_REPO_API: string;
         readonly PUBLIC_SHOW_BUTTON: boolean;
     }
 }
