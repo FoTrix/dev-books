@@ -1,9 +1,9 @@
 ---
-import { PUBLIC_REPO_API } from "astro:env/server";
+import { env } from "astro:env/client";
 import axios from "axios";
 
 
-
+    const PUBLIC_REPO_API = env.PUBLIC_REPO_API; 
 
     const response = await axios.get(PUBLIC_REPO_API);
     const repos =  await response.data;

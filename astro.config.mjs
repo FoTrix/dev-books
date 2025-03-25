@@ -8,15 +8,13 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        "astro:env/client": "/src/astro-env-client.ts"
+      }
+    }
   },
   output: "server",
-  env:{
-    schema:{
-      PUBLIC_SHOW_BUTTON: envField.boolean({context:"server", access:"public", default: true}),
-      PUBLIC_SCORE_API: envField.string({ context:"server", access:"public"}),
-      PUBLIC_REPO_API: envField.string({ context:"server", access:"public"}),
-    },
-  },
 
   adapter: vercel(),
 })

@@ -1,7 +1,7 @@
 ---
-import { PUBLIC_SCORE_API } from "astro:env/server";
+import { env } from "astro:env/client";
 
-
+const PUBLIC_SCORE_API = env.PUBLIC_SCORE_API
 
 const score = await fetch(PUBLIC_SCORE_API)
 const scoreValue = await score.text()

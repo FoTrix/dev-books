@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import { PUBLIC_SHOW_BUTTON } from "astro:env/server";
+import {env} from "astro:env/client"
 import Layout from "../../layouts/Layout.astro";
 import BookScore from "../../components/BookScore.astro";
 import BuyButton from "../../components/BuyButton.astro";
@@ -15,11 +15,22 @@ export async function getStaticPaths() {
   }));
 }
 
+
+
+// * environment variables
+// * PUBLIC_SHOW_BUTTON: true or false
+const PUBLIC_SHOW_BUTTON = env.PUBLIC_SHOW_BUTTON;
  
+/** 
+ * import a book from the collection
+ * desestructuring the data and slug from the book 
+ *desestructuring the title, author, img, readtime, description, buy from the data 
+ */
 const { book } = Astro.props;
 const { data, slug } = book;
 const { title, author, img, readtime, description, buy } = data;
 
+// * render the book content
 const { Content } = await render(book);
 ---
 
