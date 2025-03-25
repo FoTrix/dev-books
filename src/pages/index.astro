@@ -4,6 +4,11 @@ import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
 export const prerender = true;
+
+import { SCORE_API_URL, SHOW_BUY_BUTTON } from "astro:env/client";
+
+console.log("Vercel deployment check: ", SHOW_BUY_BUTTON);
+console.log("Vercel deployment check: ", SCORE_API_URL);
 ---
 
 <Layout title="index">
