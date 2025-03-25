@@ -78,6 +78,16 @@ export const prerender = true;
 <script>
   import { SCORE_API_URL, SHOW_BUY_BUTTON } from "astro:env/client";
 
-  console.log("Vercel deployment url: ", SCORE_API_URL);
-  console.log("Show buy button: ", SHOW_BUY_BUTTON);
+if(!SCORE_API_URL){
+    console.error("Not exist")
+} else {
+    console.log(SCORE_API_URL)
+}
+
+if(!SHOW_BUY_BUTTON){
+    console.error("Buy button not configured")
+} else {
+    console.log(SHOW_BUY_BUTTON)
+}
+
 </script>
